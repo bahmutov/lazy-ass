@@ -30,10 +30,10 @@ lazyAss(typeof foo === 'object', 'expected', foo, 'to be an object');
 
 * Passing an object reference to a function is about
 [2000-3000 times faster](http://jsperf.com/object-json-stringify)
-that serializing an object and passing it as a string.
+than serializing an object and passing it as a string.
 * Concatenating 2 strings before passing to a function is about
 [30% slower](http://jsperf.com/string-concat-vs-pass-string-reference)
-than passing 2 separate strings to a function.
+than passing 2 separate strings.
 
 ## Install
 
