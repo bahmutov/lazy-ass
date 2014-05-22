@@ -14,7 +14,6 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/d3/d3.js',
       'node_modules/expect.js/index.js',
       'index.js',
       'test/*spec.js'

@@ -1,8 +1,8 @@
 {
-  "name": "d3-helpers",
+  "name": "lazy-ass",
   "main": "index.js",
-  "version": "0.2.1",
-  "homepage": "https://github.com/bahmutov/d3-helpers",
+  "version": "0.1.0",
+  "homepage": "https://github.com/bahmutov/lazy-ass",
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -16,11 +16,11 @@
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "keywords": [
-    "D3",
-    "helpers",
-    "utility",
-    "functional",
-    "callbacks",
+    "lazy",
+    "assertion",
+    "assertions",
+    "debugging",
+    "defensive",
     "node",
     "browser"
   ]
