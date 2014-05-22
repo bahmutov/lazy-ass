@@ -11,16 +11,19 @@
 
 ## Example
 
+Regular assertions evaluate all arguments and concatenate message
+EVERY time, even if the condition is true.
+
 ```js
 console.assert(typeof foo === 'object,
   'expected ' + JSON.stringify(foo, null, 2) + ' to be an object');
-  // message is stringified and concatenated EVERY time no matter the condition
+```
 
-// vs
+Lazy assertion function only evaluates its arguments and forms
+a message if condition is false
 
+```js
 lazyAss(typeof foo === 'object', 'expected', foo, 'to be an object');
-  // foo variable is stringified and message is concatenated ONLY
-  // if condition is false
 ```
 
 ### Small print
