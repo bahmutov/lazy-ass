@@ -3,15 +3,21 @@
   var lazyAss = function (condition) {
     var args = [].slice.call(arguments, 1);
     if (!condition) {
-      var msg = args.reduce(function (total, arg) {
+      var msg = args.reduce(function (total, arg, k) {
+        if (k) {
+          total += ' ';
+        }
         if (typeof arg === 'string') {
-          return total + ' ' + arg;
+          return total + arg;
         }
         if (typeof arg === 'function') {
-          return total + ' ' + arg();
+          return total + arg();
         }
-        return total;
-      });
+        if (Array.isArray(arg)) {
+          return total + JSON.stringify(arg);
+        }
+        return total + JSON.stringify(arg, null, 2);
+      }, '');
       throw new Error(msg);
     }
   };

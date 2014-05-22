@@ -15,7 +15,7 @@ Regular assertions evaluate all arguments and concatenate message
 EVERY time, even if the condition is true.
 
 ```js
-console.assert(typeof foo === 'object,
+console.assert(typeof foo === 'object',
   'expected ' + JSON.stringify(foo, null, 2) + ' to be an object');
 ```
 
