@@ -26,6 +26,24 @@ a message if condition is false
 lazyAss(typeof foo === 'object', 'expected', foo, 'to be an object');
 ```
 
+## Install
+
+Node: `npm install lazy-ass --save` then `var lazyAss = require('lazy-ass');`
+
+Browser: `bower install lazy-ass --save`, makes function available as `window.lazyAss`.
+
+## Notes
+
+You can pass as many arguments to *lazyAss* after the condition. The condition
+will be evaluated every time (this is required for any assertion). The rest of arguments
+will be concatenated according to rules
+
+* string will be left unchanged.
+* function will be called and its output will be concatenated.
+* any array or object will be JSON stringified.
+
+There will be single space between the individual parts.
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014
