@@ -1,0 +1,27 @@
+{
+  "name": "d3-helpers",
+  "main": "index.js",
+  "version": "0.2.1",
+  "homepage": "https://github.com/bahmutov/d3-helpers",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js",
+    "package.json",
+    "index.html"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "keywords": [
+    "D3",
+    "helpers",
+    "utility",
+    "functional",
+    "callbacks",
+    "node",
+    "browser"
+  ]
+}

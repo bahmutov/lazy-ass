@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>d3-helpers</title>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <h1>d3-helpers</h1>
+    <script>
+    if (typeof d3h === 'undefined') {
+      throw new Error('Cannot find d3h object');
+    }
+    console.log('Found d3 helpers object');
+    for (prop in d3h) {
+      if (d3h.hasOwnProperty(prop)) {
+        console.log('d3h.' + prop);
+      }
+    }
+    </script>
+  </body>
+</html>
