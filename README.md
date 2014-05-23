@@ -35,6 +35,16 @@ than serializing an object and passing it as a string.
 [30% slower](http://jsperf.com/string-concat-vs-pass-string-reference)
 than passing 2 separate strings.
 
+```js
+function environment() {
+  // returns string
+}
+var user = {} // an object
+lazyAsync(condition, 'something went wrong for', user, 'in', environment);
+// throws an error with message equivalent of
+// 'something went wrong for ' + JSON.stringify(user) + ' in ' + environment()
+```
+
 ## Install
 
 Node: `npm install lazy-ass --save` then `var lazyAss = require('lazy-ass');`
