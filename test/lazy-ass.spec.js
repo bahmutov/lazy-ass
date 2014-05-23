@@ -1,5 +1,9 @@
+/* global lazyAss */
+if (typeof window === 'undefined') {
+  require('..'); // Node
+}
 if (typeof lazyAss === 'undefined') {
-  var lazyAss = require('..');
+  throw new Error('Cannot find lazyAss global varible');
 }
 if (typeof expect === 'undefined') {
   var expect = require('expect.js');

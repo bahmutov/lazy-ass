@@ -53,6 +53,35 @@ will be concatenated according to rules
 
 There will be single space between the individual parts.
 
+## Lazy async assertions
+
+Sometimes you do not want to throw an error synchronously, breaking the entire
+execution stack. Instead you can throw an error asynchronously using `lazyAssync`,
+which internally implements logic like this:
+
+```js
+if (!condition) {
+  setTimeout(function () {
+    throw new Error('Conditions is false!');
+  }, 0);
+}
+```
+
+This allows the execution to continue, while your global error handler (like
+my favorite [Sentry](http://bahmutov.calepin.co/know-unknown-unknowns-with-sentry.html))
+can still forward the error with all specified information to your server.
+
+```js
+lazyAssync(false, 'foo');
+console.log('after assync');
+// output
+after assync
+Uncaught Error: foo
+```
+
+In this case, there is no meaningful error stack, so use good message
+arguments - there is no performance penalty!
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014
