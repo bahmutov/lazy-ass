@@ -26,14 +26,8 @@ a message ONLY IF the condition is false
 lazyAss(typeof foo === 'object', 'expected', foo, 'to be an object');
 ```
 
-## Why?
-
-* Passing an object reference to a function is about
-[2000-3000 times faster](http://jsperf.com/object-json-stringify)
-than serializing an object and passing it as a string.
-* Concatenating 2 strings before passing to a function is about
-[30% slower](http://jsperf.com/string-concat-vs-pass-string-reference)
-than passing 2 separate strings.
+Concatenates strings, stringifies objects, calls functions - only if
+condition is false.
 
 ```js
 function environment() {
@@ -44,6 +38,15 @@ lazyAsync(condition, 'something went wrong for', user, 'in', environment);
 // throws an error with message equivalent of
 // 'something went wrong for ' + JSON.stringify(user) + ' in ' + environment()
 ```
+
+## Why?
+
+* Passing an object reference to a function is about
+[2000-3000 times faster](http://jsperf.com/object-json-stringify)
+than serializing an object and passing it as a string.
+* Concatenating 2 strings before passing to a function is about
+[30% slower](http://jsperf.com/string-concat-vs-pass-string-reference)
+than passing 2 separate strings.
 
 ## Install
 
