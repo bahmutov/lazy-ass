@@ -77,6 +77,15 @@ describe('lazyAss', function () {
         lazyAss(false, obj);
       }).to.throwException(JSON.stringify(obj, null, 2));
     });
+
+    it('takes error name and message', function () {
+      expect(function () {
+        lazyAss(false, new Error('hi there'));
+      }).to.throwException(function (err) {
+        expect(err.message).to.contain('Error');
+        expect(err.message).to.contain('hi there');
+      });
+    });
   });
 
   describe('function as condition', function () {

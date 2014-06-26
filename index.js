@@ -14,6 +14,9 @@
       if (Array.isArray(arg)) {
         return total + JSON.stringify(arg);
       }
+      if (arg instanceof Error) {
+        return total + arg.name + ' ' + arg.message;
+      }
       return total + JSON.stringify(arg, null, 2);
     }, '');
     return msg;
