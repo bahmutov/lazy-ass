@@ -78,4 +78,59 @@ describe('lazyAss', function () {
       }).to.throwException(JSON.stringify(obj, null, 2));
     });
   });
+
+  describe('function as condition', function () {
+    it('evaluates the function', function () {
+      var called;
+      function condition() { called = true; return true; }
+
+      lazyAss(condition);
+      expect(called).to.be(true);
+    });
+
+    it('no result is failure', function () {
+      function noreturn() {}
+
+      expect(function () {
+        lazyAss(noreturn);
+      }).to.throwError();
+    });
+
+    it('adds condition function source to message', function () {
+      function myCondition() {}
+      expect(function () {
+        lazyAss(myCondition);
+      }).to.throwException(/myCondition/);
+    });
+
+    it('allows anonymous functions', function () {
+      var called;
+      lazyAss(function() { return true; });
+      lazyAss(function() { return true; }, 'everything is ok');
+      lazyAss(function() { called = true; return true; }, 'everything is ok');
+      expect(called).to.be(true);
+
+      expect(function () {
+        lazyAss(function () {});
+      }).to.throwError();
+    });
+
+    it('has access via closure', function () {
+      var foo = 2, bar = 3;
+      expect(function () {
+        lazyAss(function () { return foo + bar === 6; }, 'addition');
+      }).to.throwException(function (err) {
+        expect(err.message).to.contain('foo + bar');
+        expect(err.message).to.contain('addition');
+      });
+    });
+
+    it('example', function () {
+      var foo = 2, bar = 2;
+      function isValidPair() {
+        return foo + bar === 4;
+      }
+      lazyAss(isValidPair, 'foo', foo, 'bar', bar);
+    });
+  });
 });

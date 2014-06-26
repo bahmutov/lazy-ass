@@ -19,18 +19,33 @@
     return msg;
   }
 
-  var lazyAss = function lazyAss(condition) {
+  function lazyAssLogic(condition) {
+    var fn = typeof condition === 'function' ? condition : null;
+
+    if (fn) {
+      condition = fn();
+    }
     if (!condition) {
       var args = [].slice.call(arguments, 1);
-      throw new Error(formMessage(args));
+      if (fn) {
+        args.unshift(fn.toString());
+      }
+      return new Error(formMessage(args));
+    }
+  }
+
+  var lazyAss = function lazyAss() {
+    var err = lazyAssLogic.apply(null, arguments);
+    if (err) {
+      throw err;
     }
   };
 
-  var lazyAssync = function lazyAssync(condition) {
-    if (!condition) {
-      var args = [].slice.call(arguments, 1);
+  var lazyAssync = function lazyAssync() {
+    var err = lazyAssLogic.apply(null, arguments);
+    if (err) {
       setTimeout(function () {
-        throw new Error(formMessage(args));
+        throw err;
       }, 0);
     }
   };

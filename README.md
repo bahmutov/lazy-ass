@@ -95,6 +95,48 @@ Uncaught Error: foo
 In this case, there is no meaningful error stack, so use good message
 arguments - there is no performance penalty!
 
+## Predicate function as a condition
+
+Typically, JavaScript evaluates the condition expression first, then calls *lazyAss*.
+This means the function itself sees only the true / false result, and not the expression
+itself. This makes makes the error messages cryptic
+
+    lazyAss(2 + 2 === 5);
+    // Error
+
+We usually get around this by giving at least one additional message argument to
+explain the condition tested
+
+    lazyAss(2 + 2 === 5, 'addition')
+    // Error: addition
+
+*lazyAss* has a better solution: if you give a function that evaluates the condition
+expression, if the function returns false, the error message will include the source
+of the function, making the extra arguments unnecessary
+
+    lazyAss(function () { return 2 + 2 === 5; });
+    // Error: function () { return 2 + 2 === 5; }
+
+The condition function has access to any variables in the scope, making it extremely
+powerful
+
+    var foo = 2, bar = 2;
+    lazyAss(function () { return foo + bar === 5; });
+    // Error: function () { return foo + bar === 5; }
+
+In practical terms, I recommend using separate predicates function and
+passing relevant values to the *lazyAss* function. Remember, there is no performance
+penalty!
+
+    var foo = 2, bar = 2;
+    function isValidPair() {
+      return foo + bar === 5;
+    }
+    lazyAss(isValidPair, 'foo', foo, 'bar', bar);
+    // Error: function isValidPair() {
+    //   return foo + bar === 5;
+    // } foo 2 bar 2
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014
