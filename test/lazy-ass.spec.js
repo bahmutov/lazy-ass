@@ -65,6 +65,20 @@ describe('lazyAss', function () {
       });
     });
 
+    it('handles exception if thrown from function', function () {
+      var called = 0;
+      function foo() {
+        called += 1;
+        throw new Error('Oh no!');
+      }
+      expect(function () {
+        lazyAss(false, foo, 'bar', foo);
+      }).to.throwException(function (err) {
+        expect(called).to.equal(2);
+        expect(err.message).to.contain('bar');
+      });
+    });
+
     it('JSON stringifies arrays', function () {
       expect(function () {
         lazyAss(false, [1, 2, 3]);

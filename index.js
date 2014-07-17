@@ -9,7 +9,14 @@
         return total + arg;
       }
       if (typeof arg === 'function') {
-        return total + arg();
+        var fnResult;
+        try {
+          fnResult = arg();
+        } catch (err) {
+          // ignore the error
+          fnResult = '[function ' + arg.name + ' threw error!]';
+        }
+        return total + fnResult;
       }
       if (Array.isArray(arg)) {
         return total + JSON.stringify(arg);
