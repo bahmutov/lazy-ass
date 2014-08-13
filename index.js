@@ -1,5 +1,9 @@
 (function initLazyAss() {
 
+  function isArrayLike(a) {
+    return a && typeof a.length === 'number';
+  }
+
   function formMessage(args) {
     var msg = args.reduce(function (total, arg, k) {
       if (k) {
@@ -20,6 +24,9 @@
       }
       if (Array.isArray(arg)) {
         return total + JSON.stringify(arg);
+      }
+      if (isArrayLike(arg)) {
+        return total + JSON.stringify(Array.prototype.slice.call(arg));
       }
       if (arg instanceof Error) {
         return total + arg.name + ' ' + arg.message;

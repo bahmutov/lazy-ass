@@ -160,4 +160,15 @@ describe('lazyAss', function () {
       lazyAss(isValidPair, 'foo', foo, 'bar', bar);
     });
   });
+
+  describe('serialize arguments', function () {
+    function foo() {
+      la(false, arguments);
+    }
+    it('serializes arguments object', function () {
+      expect(function () {
+        foo('something');
+      }).to.throwException(/something/);
+    });
+  });
 });
