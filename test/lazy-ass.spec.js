@@ -1,4 +1,4 @@
-/* global lazyAss */
+/* global lazyAss, la */
 if (typeof window === 'undefined') {
   require('..'); // Node
 }
@@ -14,6 +14,10 @@ describe('lazyAss', function () {
     it('is a function', function () {
       expect(lazyAss).not.to.be(undefined);
       expect(lazyAss).to.be.a('function');
+    });
+
+    it('has alias', function () {
+      expect(la).to.be.a('function');
     });
 
     it('does not throw if condition is true', function () {

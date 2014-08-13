@@ -72,6 +72,8 @@
   }
 
   register(lazyAss, 'lazyAss');
+  register(lazyAss, 'la');
   register(lazyAssync, 'lazyAssync');
+  register(lazyAssync, 'lac');
 
 }());

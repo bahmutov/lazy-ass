@@ -1,4 +1,4 @@
-/* global lazyAssync */
+/* global lazyAssync, lac */
 if (typeof window === 'undefined') {
   require('..'); // Node
 }
@@ -14,6 +14,10 @@ describe('lazyAssync', function () {
     it('is a function', function () {
       expect(lazyAssync).not.to.be(undefined);
       expect(lazyAssync).to.be.a('function');
+    });
+
+    it('has alias', function () {
+      expect(lac).to.be.a('function');
     });
 
     it('does not throw if condition is true', function () {
