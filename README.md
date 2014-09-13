@@ -6,6 +6,7 @@
 
 [![Build status][lazy-ass-ci-image] ][lazy-ass-ci-url]
 [![Coverage Status][lazy-ass-coverage-image]][lazy-ass-coverage-url]
+[![Codacy][lazy-ass-codacy-image]][lazy-ass-codacy-url]
 [![Code Climate][lazy-ass-code-climate-image]][lazy-ass-code-climate-url]
 [![dependencies][lazy-ass-dependencies-image] ][lazy-ass-dependencies-url]
 [![devdependencies][lazy-ass-devdependencies-image] ][lazy-ass-devdependencies-url]
@@ -186,6 +187,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 [lazy-ass-coverage-url]: https://coveralls.io/r/bahmutov/lazy-ass
 [lazy-ass-code-climate-image]: https://codeclimate.com/github/bahmutov/lazy-ass/badges/gpa.svg
 [lazy-ass-code-climate-url]: https://codeclimate.com/github/bahmutov/lazy-ass
+[lazy-ass-codacy-image]: https://www.codacy.com/project/badge/b60a0810c9af4fe4b2ae685932dbbdb8
+[lazy-ass-codacy-url]: https://www.codacy.com/public/bahmutov/lazy-ass.git
 [lazy-ass-dependencies-image]: https://david-dm.org/bahmutov/lazy-ass.png
 [lazy-ass-dependencies-url]: https://david-dm.org/bahmutov/lazy-ass
 [lazy-ass-devdependencies-image]: https://david-dm.org/bahmutov/lazy-ass/dev-status.png
