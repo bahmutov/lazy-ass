@@ -139,6 +139,12 @@ penalty!
     //   return foo + bar === 5;
     // } foo 2 bar 2
 
+## Testing
+
+This library is fully tested under Node and inside browser environment (CasperJs).
+I described how one can test asynchronous assertion throwing in your own projects
+using Jasmine in [a blog post](http://bahmutov.calepin.co/testing-async-lazy-assertion.html).
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014
