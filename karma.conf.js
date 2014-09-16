@@ -10,6 +10,17 @@
 // continuous run using Chrome
 // karma start karma.conf.js --single-run=false --browsers=Chrome
 
+// if you want to debug source code in the browser and do not need coverage
+// karma start karma.conf.js --single-run=false --browsers=Chrome --debug
+
+var sourcePreprocessors = 'coverage';
+function isDebug(argument) {
+    return argument === '--debug';
+}
+if (process.argv.some(isDebug)) {
+    sourcePreprocessors = [];
+}
+
 module.exports = function (config) {
   config.set({
 
@@ -34,7 +45,7 @@ module.exports = function (config) {
     ],
 
     preprocessors: {
-      'index.js': 'coverage',
+      'index.js': sourcePreprocessors,
     },
 
     // test results reporter to use
