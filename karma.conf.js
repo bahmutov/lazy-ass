@@ -1,5 +1,14 @@
-// Karma configuration
-// Generated on Fri Apr 04 2014 22:41:07 GMT-0400 (EDT)
+// single run:
+// karma start karma.conf.js
+
+// continuous watch and rerun on file changes using PhantomJS
+// karma start karma.conf.js --single-run=false --browsers=PhantomJS
+
+// single run using Chrome (not run by default)
+// karma start karma.conf.js --browsers=Chrome
+
+// continuous run using Chrome
+// karma start karma.conf.js --single-run=false --browsers=Chrome
 
 module.exports = function (config) {
   config.set({
