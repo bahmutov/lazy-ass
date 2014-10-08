@@ -62,3 +62,4 @@
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   }
 }
+

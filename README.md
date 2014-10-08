@@ -52,9 +52,11 @@ than passing 2 separate strings.
 
 ## Install
 
-Node: `npm install lazy-ass --save` then `var lazyAss = require('lazy-ass');`
+Node: `npm install lazy-ass --save` then `require('lazy-ass');`, 
+attaches functions `lazyAss` and `la` to `global` object.
 
-Browser: `bower install lazy-ass --save`, makes function available as `window.lazyAss`.
+Browser: `bower install lazy-ass --save`, include `index.js`,
+attaches functions `lazyAss` and `la` to `window` object.
 
 ## Notes
 
