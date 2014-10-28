@@ -164,6 +164,22 @@
       });
     });
 
+    describe('serializes circular objects', function () {
+      var foo = {
+        bar: 'bar'
+      };
+      foo.foo = foo;
+
+      it('can handle circular object', function () {
+        var msg = 'foo has circular reference';
+        expect(function () {
+          lazyAss(false, msg, foo);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain(msg);
+        });
+      });
+    });
+
     describe('serialize arguments', function () {
       function foo() {
         la(false, arguments);
