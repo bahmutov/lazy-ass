@@ -9,6 +9,7 @@
   "contributors": [],
   "dependencies": {},
   "devDependencies": {
+    "bad-line": "0.0.2",
     "coveralls": "2.11.2",
     "cute-stack": "1.0.2",
     "expect.js": "0.3.1",
