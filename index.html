@@ -4,14 +4,35 @@
     <meta charset="utf-8">
     <title>lazy-ass</title>
     <script src="index.js"></script>
+    <style>
+      #log {
+        margin: 10px 0px;
+        display: block;
+        white-space: pre;
+        font-family: monospace;
+      }
+      #log:before {
+        content: "the javascript:";
+        font-style: italic;
+        color: #555;
+      }
+    </style>
   </head>
   <body>
     <h1>lazy-ass</h1>
-    <script>
-    if (typeof lazyAss === 'undefined') {
-      throw new Error('Cannot find lazyAss object');
-    }
-    console.log('Found lazyAss function');
+    <p>Simple assertions with as many arguments as needed and intelligent serialization</p>
+
+    <script src="https://rawgit.com/bahmutov/console-log-div/master/console-log-div.js"></script>
+
+    <script id="log">
+      if (typeof lazyAss === 'undefined') {
+        throw new Error('Cannot find lazyAss object');
+      }
+      console.log('Found lazyAss function');
+      var foo = 3;
+      lac(foo === 'foo', 'this is async exception', foo);
+      console.log('after async exception');
+      la(typeof foo === 'string', 'variable foo is a string', foo);
     </script>
   </body>
 </html>
