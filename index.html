@@ -30,9 +30,9 @@
       }
       console.log('Found lazyAss function');
       var foo = 3;
-      lac(foo === 'foo', 'this is async exception', foo);
+      lac(foo === 'foo', 'this is an async exception', foo);
       console.log('after async exception');
-      la(typeof foo === 'string', 'variable foo is a string', foo);
+      la(typeof foo === 'string', 'sync exception, variable foo is a string', foo);
     </script>
   </body>
 </html>
