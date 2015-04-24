@@ -1,7 +1,7 @@
 {
   "name": "lazy-ass",
   "description": "Lazy assertions without performance penalty",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": {
     "url": "https://github.com/bahmutov/lazy-ass/issues"
