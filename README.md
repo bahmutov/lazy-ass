@@ -11,6 +11,8 @@
 [![dependencies][lazy-ass-dependencies-image] ][lazy-ass-dependencies-url]
 [![devdependencies][lazy-ass-devdependencies-image] ][lazy-ass-devdependencies-url]
 
+[Demo](http://glebbahmutov.com/lazy-ass/)
+
 ## Example
 
 Regular assertions evaluate all arguments and concatenate message
