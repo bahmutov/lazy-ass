@@ -67,6 +67,17 @@ module.exports = function (grunt) {
         files: ['*.js', 'test/*.js', 'index.html'],
         tasks: ['jshint', 'test']
       }
+    },
+
+    'gh-pages': {
+      options: {
+        base: '.'
+      },
+      src: [
+        'README.md',
+        'index.js',
+        'index.html'
+      ]
     }
   });
 
