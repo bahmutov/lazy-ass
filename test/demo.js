@@ -1,7 +1,3 @@
-var cute = require('cute-stack');
-cute.ui.badLine = require('bad-line');
-cute('badLine');
-
 require('..');
 /* global lazyAss */
 function bad(foo, bar) {

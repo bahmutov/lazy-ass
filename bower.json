@@ -1,7 +1,7 @@
 {
   "name": "lazy-ass",
   "main": "index.js",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "homepage": "https://github.com/bahmutov/lazy-ass",
   "license": "MIT",
   "ignore": [
