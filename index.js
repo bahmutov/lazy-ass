@@ -35,7 +35,12 @@
       try {
         argString = JSON.stringify(arg, null, 2);
       } catch (err) {
-        argString = '[cannot stringify arg ' + k + ']';
+        argString = '[cannot stringify arg ' + k + ', it has type ' + typeof arg;
+        if (typeof arg === 'object') {
+          argString += ' with keys ' + Object.keys(arg).join(', ') + ']';
+        } else {
+          argString += ']';
+        }
       }
       return total + argString;
     }, '');
