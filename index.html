@@ -32,7 +32,16 @@
       var foo = 3;
       lac(foo === 'foo', 'this is an async exception', foo);
       console.log('after async exception');
+
+      // cannot be serialized to JSON due to circular reference
+      var bar = {
+        name: 'bar'
+      };
+      bar.bar = bar;
+      lac(false, 'example printing a circular object', bar);
+
       la(typeof foo === 'string', 'sync exception, variable foo is a string', foo);
+      // nothing runs after sync exception
     </script>
   </body>
 </html>
