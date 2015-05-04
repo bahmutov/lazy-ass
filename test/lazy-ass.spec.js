@@ -190,5 +190,42 @@
         }).to.throwException(/something/);
       });
     });
+
+    describe('gives context to non-serializable objects', function () {
+
+      it('prints keys in non-serializable objects', function () {
+        var foo = {
+          bar: 'bar'
+        };
+        foo.foo = foo;
+        expect(function () {
+          lazyAss(false, foo);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('type object');
+          expect(err.message).to.contain('foo');
+          expect(err.message).to.contain('bar');
+        });
+      });
+
+      it('handles several objects', function () {
+        var foo = {
+          bar: 'bar'
+        };
+        foo.foo = foo;
+
+        var bar = {
+          foo: foo
+        };
+
+        expect(function () {
+          lazyAss(false, foo, bar);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('arg 0');
+          expect(err.message).to.contain('arg 1');
+        });
+      });
+
+    });
+
   });
 }(this));
