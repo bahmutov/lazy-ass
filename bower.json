@@ -1,7 +1,7 @@
 {
   "name": "lazy-ass",
   "main": "index.js",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "homepage": "https://github.com/bahmutov/lazy-ass",
   "license": "MIT",
   "ignore": [
@@ -14,7 +14,6 @@
     "package.json",
     "index.html"
   ],
-  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "keywords": [
     "lazy",
     "assertion",
@@ -23,5 +22,9 @@
     "defensive",
     "node",
     "browser"
-  ]
+  ],
+  "authors": [
+    "Gleb Bahmutov <gleb.bahmutov@gmail.com>"
+  ],
+  "description": "Lazy assertions without performance penalty"
 }
