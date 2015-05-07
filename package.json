@@ -63,6 +63,7 @@
   "scripts": {
     "test": "grunt test",
     "watch": "grunt watch",
-    "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "demo": "grunt gh-pages"
   }
 }
