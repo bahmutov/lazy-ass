@@ -4,6 +4,45 @@
     return a && typeof a.length === 'number';
   }
 
+  function toStringArray(arr) {
+    return 'array with ' + arr.length + ' items.\n[' +
+      arr.map(toString).join(',') + ']\n';
+  }
+
+  function isPrimitive(arg) {
+    return typeof arg === 'string' ||
+      typeof arg === 'number' ||
+      typeof arg === 'boolean';
+  }
+
+  function toString(arg, k) {
+    if (isPrimitive(arg)) {
+      return JSON.stringify(arg);
+    }
+    if (arg instanceof Error) {
+      return arg.name + ' ' + arg.message;
+    }
+
+    if (Array.isArray(arg)) {
+      return toStringArray(arg);
+    }
+    if (isArrayLike(arg)) {
+      return toStringArray(Array.prototype.slice.call(arg, 0));
+    }
+    var argString;
+    try {
+      argString = JSON.stringify(arg, null, 2);
+    } catch (err) {
+      argString = '{ cannot stringify arg ' + k + ', it has type "' + typeof arg + '"';
+      if (typeof arg === 'object') {
+        argString += ' with keys ' + Object.keys(arg).join(', ') + ' }';
+      } else {
+        argString += ' }';
+      }
+    }
+    return argString;
+  }
+
   function formMessage(args) {
     var msg = args.reduce(function (total, arg, k) {
       if (k) {
@@ -22,26 +61,7 @@
         }
         return total + fnResult;
       }
-      if (Array.isArray(arg)) {
-        return total + JSON.stringify(arg);
-      }
-      if (isArrayLike(arg)) {
-        return total + JSON.stringify(Array.prototype.slice.call(arg));
-      }
-      if (arg instanceof Error) {
-        return total + arg.name + ' ' + arg.message;
-      }
-      var argString;
-      try {
-        argString = JSON.stringify(arg, null, 2);
-      } catch (err) {
-        argString = '[cannot stringify arg ' + k + ', it has type ' + typeof arg;
-        if (typeof arg === 'object') {
-          argString += ' with keys ' + Object.keys(arg).join(', ') + ']';
-        } else {
-          argString += ']';
-        }
-      }
+      var argString = toString(arg, k);
       return total + argString;
     }, '');
     return msg;

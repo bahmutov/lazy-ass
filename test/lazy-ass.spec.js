@@ -89,7 +89,9 @@
       it('JSON stringifies arrays', function () {
         expect(function () {
           lazyAss(false, [1, 2, 3]);
-        }).to.throwException(/^\[1,2,3\]$/);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('1,2,3');
+        });
       });
 
       it('JSON stringifies objects', function () {
@@ -170,7 +172,7 @@
       };
       foo.foo = foo;
 
-      it('can handle circular object', function () {
+      it('can handle one circular object', function () {
         var msg = 'foo has circular reference';
         expect(function () {
           lazyAss(false, msg, foo);
@@ -187,7 +189,9 @@
       it('serializes arguments object', function () {
         expect(function () {
           foo('something');
-        }).to.throwException(/something/);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('something');
+        });
       });
     });
 
@@ -201,7 +205,7 @@
         expect(function () {
           lazyAss(false, foo);
         }).to.throwException(function (err) {
-          expect(err.message).to.contain('type object');
+          expect(err.message).to.contain('type "object"');
           expect(err.message).to.contain('foo');
           expect(err.message).to.contain('bar');
         });
@@ -222,6 +226,21 @@
         }).to.throwException(function (err) {
           expect(err.message).to.contain('arg 0');
           expect(err.message).to.contain('arg 1');
+        });
+      });
+
+      it('can handle array with circular objects', function () {
+        var foo = {
+          bar: 'bar'
+        };
+        foo.foo = foo;
+
+        expect(function () {
+          lazyAss(false, 'problem with foo', [foo]);
+        }).to.throwException(function (err) {
+          // console.log(err.message);
+          expect(err.message).to.contain('problem with foo');
+          expect(err.message).to.contain('bar');
         });
       });
 
