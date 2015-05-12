@@ -87,7 +87,7 @@ if (!condition) {
 ```
 
 This allows the execution to continue, while your global error handler (like
-my favorite [Sentry](http://bahmutov.calepin.co/know-unknown-unknowns-with-sentry.html))
+my favorite [Sentry](http://glebbahmutov.com/blog/know-unknown-unknowns-with-sentry/))
 can still forward the error with all specified information to your server.
 
 ```js
@@ -147,7 +147,7 @@ penalty!
 
 This library is fully tested under Node and inside browser environment (CasperJs).
 I described how one can test asynchronous assertion throwing in your own projects
-using Jasmine in [a blog post](http://bahmutov.calepin.co/testing-async-lazy-assertion.html).
+using Jasmine in [a blog post](http://glebbahmutov.com/blog/testing-async-lazy-assertion/).
 
 ### Small print
 
@@ -155,7 +155,7 @@ Author: Gleb Bahmutov &copy; 2014
 
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
-* [blog](http://bahmutov.calepin.co/)
+* [blog](http://glebbahmutov.com/blog)
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
