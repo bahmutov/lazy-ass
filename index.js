@@ -99,12 +99,18 @@
   };
 
   function register(value, name) {
+    var registered;
     if (typeof window === 'object') {
       /* global window */
       window[name] = value;
-    } else if (typeof global === 'object') {
+      registered = true;
+    }
+    if (typeof global === 'object') {
       global[name] = value;
-    } else {
+      registered = true;
+    }
+
+    if (!registered) {
       throw new Error('Do not know how to register ' + name);
     }
   }
