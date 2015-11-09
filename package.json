@@ -34,7 +34,7 @@
     "karma-phantomjs-launcher": "0.1.4",
     "matchdep": "0.3.0",
     "mocha": "2.2.4",
-    "pre-git": "0.2.1",
+    "pre-git": "1.2.2",
     "time-grunt": "1.1.1"
   },
   "engines": {
@@ -52,10 +52,6 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "pre-commit": [
-    "npm test",
-    "npm version"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:bahmutov/lazy-ass.git"
@@ -64,6 +60,22 @@
     "test": "grunt test",
     "watch": "grunt watch",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "demo": "grunt gh-pages"
+    "demo": "grunt gh-pages",
+    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": [
+        "npm test",
+        "npm version"
+      ],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
+  "czConfig": {
+    "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
   }
 }
