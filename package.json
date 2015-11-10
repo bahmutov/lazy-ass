@@ -1,12 +1,27 @@
 {
   "name": "lazy-ass",
   "description": "Lazy assertions without performance penalty",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": {
     "url": "https://github.com/bahmutov/lazy-ass/issues"
   },
+  "config": {
+    "pre-git": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": [
+        "npm test",
+        "npm version"
+      ],
+      "pre-push": [],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
   "contributors": [],
+  "czConfig": {
+    "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
+  },
   "dependencies": {},
   "devDependencies": {
     "bad-line": "0.1.1",
@@ -33,7 +48,7 @@
     "karma-mocha": "0.1.10",
     "karma-phantomjs-launcher": "0.1.4",
     "matchdep": "0.3.0",
-    "mocha": "2.2.4",
+    "mocha": "2.3.3",
     "pre-git": "1.2.4",
     "time-grunt": "1.1.1"
   },
@@ -58,24 +73,10 @@
   },
   "scripts": {
     "test": "grunt test",
+    "mocha": "mocha test/*.spec.js",
     "watch": "grunt watch",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "demo": "grunt gh-pages",
     "commit": "commit-wizard"
-  },
-  "config": {
-    "pre-git": {
-      "commit-msg": "validate-commit-msg",
-      "pre-commit": [
-        "npm test",
-        "npm version"
-      ],
-      "pre-push": [],
-      "post-commit": [],
-      "post-merge": []
-    }
-  },
-  "czConfig": {
-    "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
   }
 }

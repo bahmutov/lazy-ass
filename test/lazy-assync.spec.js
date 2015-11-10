@@ -1,7 +1,7 @@
 /* global lazyAssync, lac */
 (function (root) {
   if (typeof window === 'undefined') {
-    require('..'); // Node
+    require('..').globalRegister(); // Node
   }
   if (typeof lazyAssync === 'undefined') {
     throw new Error('Cannot find lazyAssync global varible');

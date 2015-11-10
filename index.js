@@ -98,26 +98,43 @@
     }
   };
 
-  function register(value, name) {
-    var registered;
-    if (typeof window === 'object') {
-      /* global window */
-      window[name] = value;
-      registered = true;
-    }
-    if (typeof global === 'object') {
-      global[name] = value;
-      registered = true;
-    }
+  lazyAss.async = lazyAssync;
 
-    if (!registered) {
-      throw new Error('Do not know how to register ' + name);
+  function isNode() {
+    return typeof global === 'object';
+  }
+
+  function isBrowser() {
+    return typeof window === 'object';
+  }
+
+  function isCommonJS() {
+    return typeof module === 'object';
+  }
+
+  function globalRegister() {
+    if (isNode()) {
+      /* global global */
+      register(global, lazyAss, 'lazyAss', 'la');
+      register(global, lazyAssync, 'lazyAssync', 'lac');
     }
   }
 
-  register(lazyAss, 'lazyAss');
-  register(lazyAss, 'la');
-  register(lazyAssync, 'lazyAssync');
-  register(lazyAssync, 'lac');
+  function register(root, value, name, alias) {
+    root[name] = root[alias] = value;
+  }
+
+  lazyAss.globalRegister = globalRegister;
+
+  if (isBrowser()) {
+    /* global window */
+    register(window, lazyAss, 'lazyAss', 'la');
+    register(window, lazyAssync, 'lazyAssync', 'lac');
+  }
+
+  if (isCommonJS()) {
+    /* global module */
+    module.exports = lazyAss;
+  }
 
 }());

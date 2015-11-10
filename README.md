@@ -54,8 +54,9 @@ than passing 2 separate strings.
 
 ## Install
 
-Node: `npm install lazy-ass --save` then `require('lazy-ass');`, 
-attaches functions `lazyAss` and `la` to `global` object.
+Node: `npm install lazy-ass --save` then `var la = require('lazy-ass');`.
+You can attach the methods to the global object using
+`require('lazy-ass').globalRegister();`.
 
 Browser: `bower install lazy-ass --save`, include `index.js`,
 attaches functions `lazyAss` and `la` to `window` object.
@@ -91,7 +92,7 @@ my favorite [Sentry](http://glebbahmutov.com/blog/know-unknown-unknowns-with-sen
 can still forward the error with all specified information to your server.
 
 ```js
-lazyAssync(false, 'foo');
+lazyAss.async(false, 'foo');
 console.log('after assync');
 // output
 after assync

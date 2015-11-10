@@ -1,18 +1,21 @@
 /* global lazyAss, la */
 (function (root) {
-  if (typeof window === 'undefined') {
-    require('..'); // Node
-  }
-  if (typeof lazyAss === 'undefined') {
-    throw new Error('Cannot find lazyAss global varible');
-  }
-  if (typeof root.expect === 'undefined') {
-    root.expect = require('expect.js');
-  }
-
   var expect = root.expect;
 
   describe('lazyAss', function () {
+    beforeEach(function () {
+      if (typeof window === 'undefined') {
+        require('..').globalRegister(); // Node
+      }
+      if (typeof lazyAss === 'undefined') {
+        throw new Error('Cannot find lazyAss global varible');
+      }
+      if (typeof root.expect === 'undefined') {
+        root.expect = require('expect.js');
+        expect = root.expect;
+      }
+    });
+
     describe('lazyAss function itself', function () {
       it('is a function', function () {
         expect(lazyAss).not.to.be(undefined);
