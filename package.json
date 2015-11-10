@@ -77,6 +77,7 @@
     "watch": "grunt watch",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "demo": "grunt gh-pages",
-    "commit": "commit-wizard"
+    "commit": "commit-wizard",
+    "dont-break": "dont-break --timeout 30"
   }
 }
