@@ -34,7 +34,7 @@
     "karma-phantomjs-launcher": "0.1.4",
     "matchdep": "0.3.0",
     "mocha": "2.2.4",
-    "pre-git": "1.2.2",
+    "pre-git": "1.2.4",
     "time-grunt": "1.1.1"
   },
   "engines": {
@@ -61,7 +61,7 @@
     "watch": "grunt watch",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "demo": "grunt gh-pages",
-    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz"
+    "commit": "commit-wizard"
   },
   "config": {
     "pre-git": {
