@@ -74,7 +74,7 @@
     "url": "git@github.com:bahmutov/lazy-ass.git"
   },
   "scripts": {
-    "commit": "commit-wizard",
+    "commit": "git-issues && commit-wizard",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "demo": "grunt gh-pages",
     "dont-break": "dont-break --timeout 30",
