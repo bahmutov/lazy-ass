@@ -15,13 +15,13 @@
     "index.html"
   ],
   "keywords": [
-    "lazy",
     "assertion",
     "assertions",
+    "browser",
     "debugging",
     "defensive",
-    "node",
-    "browser"
+    "lazy",
+    "node"
   ],
   "authors": [
     "Gleb Bahmutov <gleb.bahmutov@gmail.com>"
