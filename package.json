@@ -13,7 +13,10 @@
         "npm test",
         "npm version"
       ],
-      "pre-push": [],
+      "pre-push": [
+        "npm run size",
+        "npm run pkgfiles"
+      ],
       "post-commit": [],
       "post-merge": []
     }
@@ -47,6 +50,7 @@
     "karma-phantomjs-launcher": "0.2.1",
     "matchdep": "1.0.0",
     "mocha": "2.3.4",
+    "pkgfiles": "2.3.0",
     "pre-git": "1.3.0",
     "time-grunt": "1.2.2"
   },
@@ -70,12 +74,14 @@
     "url": "git@github.com:bahmutov/lazy-ass.git"
   },
   "scripts": {
-    "issues": "git-issues",
     "commit": "commit-wizard",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "demo": "grunt gh-pages",
     "dont-break": "dont-break --timeout 30",
+    "issues": "git-issues",
     "mocha": "mocha test/*.spec.js",
+    "pkgfiles": "pkgfiles",
+    "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
     "test": "grunt test",
     "watch": "grunt watch"
   }
