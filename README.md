@@ -6,11 +6,12 @@
 
 [![Build status][lazy-ass-ci-image] ][lazy-ass-ci-url]
 [![manpm](https://img.shields.io/badge/manpm-compatible-3399ff.svg)](https://github.com/bahmutov/manpm)
+[![dependencies][lazy-ass-dependencies-image] ][lazy-ass-dependencies-url]
+[![devdependencies][lazy-ass-devdependencies-image] ][lazy-ass-devdependencies-url]
+
 [![Coverage Status][lazy-ass-coverage-image]][lazy-ass-coverage-url]
 [![Codacy][lazy-ass-codacy-image]][lazy-ass-codacy-url]
 [![Code Climate][lazy-ass-code-climate-image]][lazy-ass-code-climate-url]
-[![dependencies][lazy-ass-dependencies-image] ][lazy-ass-dependencies-url]
-[![devdependencies][lazy-ass-devdependencies-image] ][lazy-ass-devdependencies-url]
 
 [Demo](http://glebbahmutov.com/lazy-ass/)
 
