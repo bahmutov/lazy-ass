@@ -9,6 +9,7 @@
 [![dependencies][lazy-ass-dependencies-image] ][lazy-ass-dependencies-url]
 [![devdependencies][lazy-ass-devdependencies-image] ][lazy-ass-devdependencies-url]
 
+[![semantic-release][semantic-image] ][semantic-url]
 [![Coverage Status][lazy-ass-coverage-image]][lazy-ass-coverage-url]
 [![Codacy][lazy-ass-codacy-image]][lazy-ass-codacy-url]
 [![Code Climate][lazy-ass-code-climate-image]][lazy-ass-code-climate-url]
@@ -212,3 +213,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [lazy-ass-dependencies-url]: https://david-dm.org/bahmutov/lazy-ass
 [lazy-ass-devdependencies-image]: https://david-dm.org/bahmutov/lazy-ass/dev-status.png
 [lazy-ass-devdependencies-url]: https://david-dm.org/bahmutov/lazy-ass#info=devDependencies
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
