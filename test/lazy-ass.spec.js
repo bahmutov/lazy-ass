@@ -112,6 +112,22 @@
           expect(err.message).to.contain('hi there');
         });
       });
+
+      it('does adds spaces between arguments', function () {
+        expect(function () {
+          lazyAss(false, 'foo', 'bar', 42);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('foo bar 42');
+        });
+      });
+
+      it('does not add space if previous one has newline', function () {
+        expect(function () {
+          lazyAss(false, 'foo\n', 'bar', 42);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('foo\nbar 42');
+        });
+      });
     });
 
     describe('function as condition', function () {

@@ -43,9 +43,13 @@
     return argString;
   }
 
+  function endsWithNewLine(s) {
+    return /\n$/.test(s);
+  }
+
   function formMessage(args) {
     var msg = args.reduce(function (total, arg, k) {
-      if (k) {
+      if (k && !endsWithNewLine(total)) {
         total += ' ';
       }
       if (typeof arg === 'string') {
