@@ -15,6 +15,10 @@
       typeof arg === 'boolean';
   }
 
+  function isError(e) {
+    return e instanceof Error;
+  }
+
   function toString(arg, k) {
     if (isPrimitive(arg)) {
       return JSON.stringify(arg);
@@ -72,6 +76,10 @@
   }
 
   function lazyAssLogic(condition) {
+    if (isError(condition)) {
+      return condition;
+    }
+
     var fn = typeof condition === 'function' ? condition : null;
 
     if (fn) {

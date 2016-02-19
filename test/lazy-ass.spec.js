@@ -2,6 +2,12 @@
 (function (root) {
   var expect = root.expect;
 
+  function hasPromises() {
+    return typeof Promise !== 'undefined';
+  }
+
+  function noop() {}
+
   describe('lazyAss', function () {
     beforeEach(function () {
       if (typeof window === 'undefined') {
@@ -13,6 +19,36 @@
       if (typeof root.expect === 'undefined') {
         root.expect = require('expect.js');
         expect = root.expect;
+      }
+    });
+
+    describe('just an error', function () {
+      it('rethrows instance of Error as condition', function () {
+        expect(function () {
+          lazyAss(new Error('foo'));
+        }).to.throwException(/^foo$/);
+      });
+
+      if (hasPromises()) {
+        /* global Promise */
+        it('rethrows promise errors', function (done) {
+          var p = new Promise(function (resolve, reject) {
+            reject(new Error('foo'));
+          });
+          p.then(noop, lazyAss).catch(function (err) {
+            expect(err.message).to.be('foo');
+            done();
+          });
+        });
+
+        // really hard to make this test fail, yet pass
+        // comment out, but leaving it in the code for future
+        // it('rethrows promise errors', function (done) {
+        //   var p = new Promise(function (resolve, reject) {
+        //     reject(new Error('foo'));
+        //   });
+        //   p.then(noop, lazyAssync);
+        // });
       }
     });
 

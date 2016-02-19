@@ -111,6 +111,48 @@ Uncaught Error: foo
 In this case, there is no meaningful error stack, so use good message
 arguments - there is no performance penalty!
 
+## Rethrowing errors
+
+If the condition itself is an instance of Error, it is simply rethrown (synchronously or
+asynchronously). 
+
+```js
+lazyAss(new Error('foo'));
+// Uncaught Error: foo
+```
+
+Useful to make sure errors in the promise chains are 
+[not silently ignored](https://glebbahmutov.com/blog/why-promises-need-to-be-done/).
+
+For example, a rejected promise below this will be ignored.
+
+```js
+var p = new Promise(function (resolve, reject) {
+  reject(new Error('foo'));
+});
+p.then(...);
+```
+
+We can catch it and rethrow it *synchronously*, but it will be ignored too (same way,
+only one step further)
+
+```js
+var p = new Promise(function (resolve, reject) {
+  reject(new Error('foo'));
+});
+p.then(..., lazyAss);
+```
+
+But we can actually trigger global error if we rethrow the error *asynchronously*
+
+```js
+var p = new Promise(function (resolve, reject) {
+  reject(new Error('foo'));
+});
+p.then(..., lazyAssync);
+// Uncaught Error: foo
+```
+
 ## Predicate function as a condition
 
 Typically, JavaScript evaluates the condition expression first, then calls *lazyAss*.

@@ -1,8 +1,8 @@
 {
   "name": "lazy-ass",
   "description": "Lazy assertions without performance penalty",
-  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "version": "0.0.0-semantic-release",
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "bugs": {
     "url": "https://github.com/bahmutov/lazy-ass/issues"
   },
@@ -18,17 +18,6 @@
       "post-commit": [],
       "post-merge": []
     }
-  },
-  "release": {
-    "verifyConditions": [
-      {
-        "path": "@semantic-release/condition-travis"
-      },
-      {
-        "path": "condition-node-version",
-        "node": "4.2.2"
-      }
-    ]
   },
   "contributors": [],
   "dependencies": {},
@@ -89,22 +78,33 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "release": {
+    "verifyConditions": [
+      {
+        "path": "@semantic-release/condition-travis"
+      },
+      {
+        "path": "condition-node-version",
+        "node": "4.2.2"
+      }
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/lazy-ass.git"
   },
   "scripts": {
-    "commit": "git-issues && commit-wizard",
     "build": "grunt",
+    "commit": "git-issues && commit-wizard",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "demo": "grunt gh-pages",
     "dont-break": "dont-break --timeout 30",
     "issues": "git-issues",
     "mocha": "mocha test/*.spec.js",
     "pkgfiles": "pkgfiles",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
     "test": "grunt test",
-    "watch": "grunt watch",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "watch": "grunt watch"
   }
 }
