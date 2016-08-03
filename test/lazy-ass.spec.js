@@ -145,7 +145,7 @@
           foo: 'foo',
           bad: undefined
         };
-        const str = JSON.stringify(obj);
+        var str = JSON.stringify(obj);
         expect(str).not.to.contain('bad', str);
       });
 
@@ -160,7 +160,7 @@
           }
           return value;
         }
-        const str = JSON.stringify(obj, replacer);
+        var str = JSON.stringify(obj, replacer);
         expect(str).to.contain('foo', str);
         expect(str).to.contain('bad', str);
       });
@@ -178,7 +178,7 @@
           }
           return value;
         }
-        const str = JSON.stringify(obj, replacer);
+        var str = JSON.stringify(obj, replacer);
         expect(str).to.contain('foo', str);
         expect(str).to.contain('bar', str);
         expect(str).to.contain('baz', str);
