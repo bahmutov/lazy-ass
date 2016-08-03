@@ -19,6 +19,23 @@
     return e instanceof Error;
   }
 
+  /*
+    custom JSON.stringify replacer to make sure we do not
+    hide properties that have value "undefined"
+    var o = {
+      foo: 42,
+      bar: undefined
+    }
+    // standard JSON.stringify returns '{"foo": 42}'
+    // this replacer returns '{"foo": 42, "bar": null}'
+  */
+  function replacer(key, value) {
+    if (value === undefined) {
+      return null;
+    }
+    return value;
+  }
+
   function toString(arg, k) {
     if (isPrimitive(arg)) {
       return JSON.stringify(arg);
@@ -35,7 +52,7 @@
     }
     var argString;
     try {
-      argString = JSON.stringify(arg, null, 2);
+      argString = JSON.stringify(arg, replacer, 2);
     } catch (err) {
       argString = '{ cannot stringify arg ' + k + ', it has type "' + typeof arg + '"';
       if (typeof arg === 'object') {

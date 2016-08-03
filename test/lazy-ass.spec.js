@@ -140,6 +140,64 @@
         }).to.throwException(JSON.stringify(obj, null, 2));
       });
 
+      it('JSON.stringify skip undefined property', function () {
+        var obj = {
+          foo: 'foo',
+          bad: undefined
+        };
+        const str = JSON.stringify(obj);
+        expect(str).not.to.contain('bad', str);
+      });
+
+      it('JSON.stringify with custom replacer', function () {
+        var obj = {
+          foo: 'foo',
+          bad: undefined
+        };
+        function replacer(key, value) {
+          if (value === undefined) {
+            return 'null';
+          }
+          return value;
+        }
+        const str = JSON.stringify(obj, replacer);
+        expect(str).to.contain('foo', str);
+        expect(str).to.contain('bad', str);
+      });
+
+      it('nested JSON.stringify with custom replacer', function () {
+        var obj = {
+          foo: 'foo',
+          bar: {
+            baz: 'value'
+          }
+        };
+        function replacer(key, value) {
+          if (value === undefined) {
+            return null;
+          }
+          return value;
+        }
+        const str = JSON.stringify(obj, replacer);
+        expect(str).to.contain('foo', str);
+        expect(str).to.contain('bar', str);
+        expect(str).to.contain('baz', str);
+        expect(str).to.contain('value', str);
+      });
+
+      it('JSON stringifies undefined value of a property', function () {
+        var obj = {
+          foo: 'foo',
+          bad: undefined
+        };
+        expect(function () {
+          lazyAss(false, obj);
+        }).to.throwException(function (err) {
+          expect(err.message).to.contain('foo', err.message);
+          expect(err.message).to.contain('bad', err.message);
+        });
+      });
+
       it('takes error name and message', function () {
         expect(function () {
           lazyAss(false, new Error('hi there'));

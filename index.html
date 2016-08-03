@@ -41,7 +41,11 @@
       bar.bar = bar;
       lac(false, 'example printing a circular object', bar);
 
-      la(typeof foo === 'string', 'sync exception, variable foo is a string', foo);
+      lac(false, {foo: 'foo', bar: undefined},
+        'this object has property "bar" with undefined value')
+
+      la(typeof foo === 'string',
+        'sync exception, variable foo is NOT a string, but', typeof foo, foo);
       // nothing runs after sync exception
     </script>
   </body>

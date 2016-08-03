@@ -114,14 +114,14 @@ arguments - there is no performance penalty!
 ## Rethrowing errors
 
 If the condition itself is an instance of Error, it is simply rethrown (synchronously or
-asynchronously). 
+asynchronously).
 
 ```js
 lazyAss(new Error('foo'));
 // Uncaught Error: foo
 ```
 
-Useful to make sure errors in the promise chains are 
+Useful to make sure errors in the promise chains are
 [not silently ignored](https://glebbahmutov.com/blog/why-promises-need-to-be-done/).
 
 For example, a rejected promise below this will be ignored.
@@ -241,19 +241,19 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-[lazy-ass-icon]: https://nodei.co/npm/lazy-ass.png?downloads=true
+[lazy-ass-icon]: https://nodei.co/npm/lazy-ass.svg?downloads=true
 [lazy-ass-url]: https://npmjs.org/package/lazy-ass
-[lazy-ass-ci-image]: https://travis-ci.org/bahmutov/lazy-ass.png?branch=master
+[lazy-ass-ci-image]: https://travis-ci.org/bahmutov/lazy-ass.svg?branch=master
 [lazy-ass-ci-url]: https://travis-ci.org/bahmutov/lazy-ass
-[lazy-ass-coverage-image]: https://coveralls.io/repos/bahmutov/lazy-ass/badge.png
+[lazy-ass-coverage-image]: https://coveralls.io/repos/bahmutov/lazy-ass/badge.svg
 [lazy-ass-coverage-url]: https://coveralls.io/r/bahmutov/lazy-ass
 [lazy-ass-code-climate-image]: https://codeclimate.com/github/bahmutov/lazy-ass/badges/gpa.svg
 [lazy-ass-code-climate-url]: https://codeclimate.com/github/bahmutov/lazy-ass
 [lazy-ass-codacy-image]: https://www.codacy.com/project/badge/b60a0810c9af4fe4b2ae685932dbbdb8
 [lazy-ass-codacy-url]: https://www.codacy.com/public/bahmutov/lazy-ass.git
-[lazy-ass-dependencies-image]: https://david-dm.org/bahmutov/lazy-ass.png
+[lazy-ass-dependencies-image]: https://david-dm.org/bahmutov/lazy-ass.svg
 [lazy-ass-dependencies-url]: https://david-dm.org/bahmutov/lazy-ass
-[lazy-ass-devdependencies-image]: https://david-dm.org/bahmutov/lazy-ass/dev-status.png
+[lazy-ass-devdependencies-image]: https://david-dm.org/bahmutov/lazy-ass/dev-status.svg
 [lazy-ass-devdependencies-url]: https://david-dm.org/bahmutov/lazy-ass#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
