@@ -201,6 +201,16 @@ This library is fully tested under Node and inside browser environment (CasperJs
 I described how one can test asynchronous assertion throwing in your own projects
 using Jasmine in [a blog post](http://glebbahmutov.com/blog/testing-async-lazy-assertion/).
 
+## TypeScript
+
+If you use this function from a TypeScript project, we provide ambient type
+definition file. Because this is CommonJS library, use it like this
+
+```ts
+import la = require('lazy-ass')
+// la should have type signature
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2014

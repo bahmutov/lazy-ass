@@ -65,7 +65,8 @@
     "index.js",
     "index.html",
     "bower.json",
-    "test/demo.js"
+    "test/demo.js",
+    "index.d.ts"
   ],
   "homepage": "https://github.com/bahmutov/lazy-ass",
   "keywords": [
@@ -79,6 +80,7 @@
   ],
   "license": "MIT",
   "main": "index.js",
+  "types": "index.d.ts",
   "release": {
     "verifyConditions": [
       {
