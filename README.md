@@ -24,6 +24,8 @@ Is the current code breaking dependencies if released?
 [circle-ci-image]: https://circleci.com/gh/bahmutov/lazy-ass.svg?style=svg
 [circle-ci-url]: https://circleci.com/gh/bahmutov/lazy-ass
 
+Note: only tested against Node 4+
+
 ## Example
 
 Regular assertions evaluate all arguments and concatenate message
