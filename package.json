@@ -28,6 +28,7 @@
     "coveralls": "2.11.6",
     "expect.js": "0.3.1",
     "git-issues": "1.2.0",
+    "github-post-release": "1.12.1",
     "grunt": "0.4.5",
     "grunt-banner": "0.6.0",
     "grunt-clean-console": "0.1.1",
@@ -90,7 +91,8 @@
         "path": "condition-node-version",
         "node": "4.2.2"
       }
-    ]
+    ],
+    "generateNotes": "github-post-release"
   },
   "repository": {
     "type": "git",
