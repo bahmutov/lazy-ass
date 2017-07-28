@@ -14,8 +14,6 @@
 [![Codacy][lazy-ass-codacy-image]][lazy-ass-codacy-url]
 [![Code Climate][lazy-ass-code-climate-image]][lazy-ass-code-climate-url]
 [![next-update-travis badge][nut-badge]][nut-readme]
-[nut-badge]: https://img.shields.io/badge/next--update--travis-ok-green.svg
-[nut-readme]: https://github.com/bahmutov/next-update-travis#readme
 
 [Demo](http://glebbahmutov.com/lazy-ass/)
 
@@ -270,3 +268,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [lazy-ass-devdependencies-url]: https://david-dm.org/bahmutov/lazy-ass#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
+[nut-badge]: https://img.shields.io/badge/next--update--travis-ok-green.svg
+[nut-readme]: https://github.com/bahmutov/next-update-travis#readme
