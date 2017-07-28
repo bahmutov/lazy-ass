@@ -83,7 +83,6 @@
   ],
   "license": "MIT",
   "main": "index.js",
-  "types": "index.d.ts",
   "release": {
     "verifyConditions": [
       {
@@ -110,10 +109,11 @@
     "issues": "git-issues",
     "mocha": "mocha test/*.spec.js",
     "pkgfiles": "pkgfiles",
+    "pretest": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
-    "pretest": "npm run build",
     "test": "grunt test",
     "watch": "grunt watch"
-  }
+  },
+  "types": "index.d.ts"
 }
