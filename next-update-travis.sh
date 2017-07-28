@@ -26,7 +26,7 @@ if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then
   # --latest true | false
   # see all options by installing next-update
   # and running next-update -h
-  next-update --allow minor --latest false
+  next-update --allow minor --latest true
 
   git status
   # if package.json is modified we have

@@ -7,6 +7,9 @@
     "url": "https://github.com/bahmutov/lazy-ass/issues"
   },
   "config": {
+    "next-update": {
+      "skip": ["grunt", "grunt-cli", "karma"]
+    },
     "pre-git": {
       "commit-msg": "simple",
       "pre-commit": [
