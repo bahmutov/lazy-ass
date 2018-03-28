@@ -63,7 +63,7 @@
     "phantomjs": "2.1.7",
     "phantomjs-prebuilt": "2.1.16",
     "pkgfiles": "2.3.2",
-    "pre-git": "3.17.0",
+    "pre-git": "3.17.1",
     "semantic-release": "6.3.6",
     "simple-commit-message": "3.3.2",
     "time-grunt": "1.4.0"
