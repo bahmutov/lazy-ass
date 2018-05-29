@@ -1,2 +1,3 @@
 declare function lazyAss(predicate: any, ...args:any[]): void;
-export = lazyAss;
+export default lazyAss
+// TODO add `lazyAss.async = lazyAssync` export
