@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`function as condition has access via closure 1`] = `
+"function () {
+                return foo + bar === 6;
+            } addition"
+`;

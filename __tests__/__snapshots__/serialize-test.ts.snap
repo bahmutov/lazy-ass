@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gives context to non-serializable objects can handle array with circular objects 1`] = `
+"problem with foo array with 1 items.
+[{ cannot stringify arg 0, it has type \\"object\\" with keys bar, foo }]
+"
+`;
+
+exports[`gives context to non-serializable objects handles several objects 1`] = `"{ cannot stringify arg 0, it has type \\"object\\" with keys bar, foo } { cannot stringify arg 1, it has type \\"object\\" with keys foo }"`;
+
+exports[`gives context to non-serializable objects prints keys in non-serializable objects 1`] = `"{ cannot stringify arg 0, it has type \\"object\\" with keys bar, foo }"`;
+
+exports[`serialize arguments serializes arguments object 1`] = `
+"array with 1 items.
+[\\"something\\"]
+"
+`;
+
+exports[`serializes circular objects can handle one circular object 1`] = `"foo has circular reference { cannot stringify arg 1, it has type \\"object\\" with keys bar, foo }"`;

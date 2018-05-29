@@ -1,3 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`lazy-ass JSON stringifies arrays 1`] = `
+"array with 3 items.
+[1,2,3]
+"
+`;
+
+exports[`lazy-ass JSON stringifies objects 1`] = `
+"{
+  \\"foo\\": \\"foo\\"
+}"
+`;
+
+exports[`lazy-ass JSON stringifies undefined value of a property 1`] = `
+"{
+  \\"foo\\": \\"foo\\",
+  \\"bad\\": null
+}"
+`;
+
+exports[`lazy-ass JSON.stringify skip undefined property 1`] = `"{\\"foo\\":\\"foo\\"}"`;
+
+exports[`lazy-ass JSON.stringify with custom replacer 1`] = `"{\\"foo\\":\\"foo\\",\\"bad\\":\\"null\\"}"`;
+
+exports[`lazy-ass calls functions to form message 1`] = `"foo bar foo"`;
+
+exports[`lazy-ass does adds spaces between arguments 1`] = `"foo bar 42"`;
+
+exports[`lazy-ass does not add space if previous one has newline 1`] = `
+"foo
+bar 42"
+`;
+
+exports[`lazy-ass handles exception if thrown from function 1`] = `"[function foo threw error!] bar [function foo threw error!]"`;
+
+exports[`lazy-ass nested JSON.stringify with custom replacer 1`] = `"{\\"foo\\":\\"foo\\",\\"bar\\":{\\"baz\\":\\"value\\"}}"`;
+
+exports[`lazy-ass takes error name and message 1`] = `"Error hi there"`;
+
 exports[`lazy-ass throws nice message 1`] = `"text 42 more text"`;

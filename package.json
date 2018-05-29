@@ -95,7 +95,7 @@
     "test": "npm run unit && npm run jest",
     "unit": "mocha test/commonjs.spec.js",
     "jest": "jest",
-    "pretty": "prettier --single-quote --write src/*.ts"
+    "pretty": "prettier --single-quote --write src/*.ts __tests__/*.ts"
   },
   "jest": {
     "transform": {
