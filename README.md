@@ -16,13 +16,6 @@
 
 [Demo](http://glebbahmutov.com/lazy-ass/)
 
-Is the current code breaking dependencies if released?
-[![Dont-break][circle-ci-image] ][circle-ci-url] - checks using
-[dont-break](https://github.com/bahmutov/dont-break)
-
-[circle-ci-image]: https://circleci.com/gh/bahmutov/lazy-ass.svg?style=svg
-[circle-ci-url]: https://circleci.com/gh/bahmutov/lazy-ass
-
 Note: only tested against Node 4+
 
 ## Example
