@@ -1,4 +1,7 @@
-// TODO update this demo too, probably use Jest
+// TODO update this demo too, probably use Jest id:2
+// Gleb Bahmutov
+// gleb.bahmutov@gmail.com
+// https://github.com/bahmutov/lazy-ass/issues/35
 
 /* global lazyAssync, lac */
 (function (root) {
