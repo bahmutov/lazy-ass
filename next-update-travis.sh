@@ -42,7 +42,10 @@ if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then
     git commit -m "chore(deps): upgrade dependencies using next-update"
     # push back to GitHub using token
     git remote remove origin
-    # TODO read origin from package.json
+    # TODO read origin from package.json id:0
+    # Gleb Bahmutov
+    # gleb.bahmutov@gmail.com
+    # https://github.com/bahmutov/lazy-ass/issues/29
     # or use github api module github
     # like in https://github.com/semantic-release/semantic-release/blob/caribou/src/post.js
     git remote add origin https://next-update:$GH_TOKEN@github.com/bahmutov/lazy-ass.git
