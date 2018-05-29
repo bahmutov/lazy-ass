@@ -29,14 +29,17 @@
   "contributors": [],
   "dependencies": {},
   "devDependencies": {
+    "@types/jest": "22.2.3",
     "coveralls": "2.13.3",
     "git-issues": "1.3.1",
+    "jest": "23.0.1",
     "mocha": "3.5.3",
     "pkgfiles": "2.3.2",
     "pre-git": "3.17.1",
     "prettier": "1.13.2",
     "semantic-release": "^15.5.0",
     "simple-commit-message": "3.3.2",
+    "ts-jest": "22.4.6",
     "typescript": "2.8.3"
   },
   "engines": {
@@ -89,8 +92,19 @@
     "pretest": "npm run build",
     "semantic-release": "semantic-release",
     "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
-    "test": "npm run unit",
+    "test": "npm run unit && npm run jest",
     "unit": "mocha test/commonjs.spec.js",
+    "jest": "jest",
     "pretty": "prettier --single-quote --write src/*.ts"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
   }
 }

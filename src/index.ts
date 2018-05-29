@@ -104,7 +104,7 @@ function formMessage(args) {
   return msg;
 }
 
-function lazyAssLogic(condition) {
+function lazyAssLogic(condition: any, ...args: any[]) {
   if (isError(condition)) {
     return condition;
   }
@@ -115,7 +115,7 @@ function lazyAssLogic(condition) {
     condition = fn();
   }
   if (!condition) {
-    var args = [].slice.call(arguments, 1);
+    // var args = [].slice.call(arguments, 1);
     if (fn) {
       args.unshift(fn.toString());
     }
@@ -124,19 +124,21 @@ function lazyAssLogic(condition) {
 }
 
 interface LazyAss {
-  (): void;
-  async: () => void;
+  (condition: any, ...args: any[]): void;
+  async: (condition: any, ...args: any[]) => void;
 }
 
-export const lazyAss: LazyAss = <LazyAss>function lazyAss() {
-  var err = lazyAssLogic.apply(null, arguments);
-  if (err) {
-    throw err;
+export const lazyAss: LazyAss = <LazyAss>(
+  function lazyAss(condition: any, ...args: any[]) {
+    var err = lazyAssLogic(condition, ...args);
+    if (err) {
+      throw err;
+    }
   }
-};
+);
 
-export const lazyAssync = function lazyAssync() {
-  var err = lazyAssLogic.apply(null, arguments);
+export const lazyAssync = function lazyAssync(condition: any, ...args: any[]) {
+  var err = lazyAssLogic(condition, ...args);
   if (err) {
     setTimeout(function() {
       throw err;

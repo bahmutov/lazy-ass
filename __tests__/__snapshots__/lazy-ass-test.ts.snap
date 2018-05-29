@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lazy-ass throws nice message 1`] = `"text 42 more text"`;
