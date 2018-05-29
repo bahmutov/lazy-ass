@@ -6,12 +6,10 @@ cache:
 notifications:
   email: true
 node_js:
-  - '4.2.2'
-  - '6'
+  - '10'
 before_script:
   - npm prune
 script:
-  - ./next-update-travis.sh
   - npm test
 after_success:
   - npm run coveralls
