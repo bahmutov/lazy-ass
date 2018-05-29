@@ -34,6 +34,7 @@
     "mocha": "3.5.3",
     "pkgfiles": "2.3.2",
     "pre-git": "3.17.1",
+    "prettier": "1.13.2",
     "semantic-release": "^15.5.0",
     "simple-commit-message": "3.3.2",
     "typescript": "2.8.3"
@@ -76,7 +77,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run clean && npm run pretty",
     "build": "tsc",
     "commit": "git-issues && commit-wizard",
     "coveralls": "cat coverage/PhantomJS*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
@@ -89,6 +90,7 @@
     "semantic-release": "semantic-release",
     "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
     "test": "npm run unit",
-    "unit": "mocha test/commonjs.spec.js"
+    "unit": "mocha test/commonjs.spec.js",
+    "pretty": "prettier --single-quote --write src/*.ts"
   }
 }
