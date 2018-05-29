@@ -1,4 +1,4 @@
-import la from '../src';
+import la from '../src'
 
 describe('lazy-ass as default export', () => {
   it('does not throw if condition is true', () => {

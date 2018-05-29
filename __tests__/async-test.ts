@@ -1,4 +1,4 @@
-import la from '../src';
+import la from '../src'
 
 describe('lazy-ass.async', () => {
   it('it is a function', () => {
