@@ -1,5 +1,3 @@
-(function initLazyAss() {
-
   function isArrayLike(a) {
     return a && typeof a.length === 'number';
   }
@@ -111,14 +109,14 @@
     }
   }
 
-  var lazyAss = function lazyAss() {
+  export const lazyAss = function lazyAss() {
     var err = lazyAssLogic.apply(null, arguments);
     if (err) {
       throw err;
     }
   };
 
-  var lazyAssync = function lazyAssync() {
+  export const lazyAssync = function lazyAssync() {
     var err = lazyAssLogic.apply(null, arguments);
     if (err) {
       setTimeout(function () {
@@ -127,43 +125,45 @@
     }
   };
 
-  lazyAss.async = lazyAssync;
+  // lazyAss.async = lazyAssync;
 
-  function isNode() {
-    return typeof global === 'object';
-  }
+  export default lazyAss
 
-  function isBrowser() {
-    return typeof window === 'object';
-  }
+//   function isNode() {
+//     return typeof global === 'object';
+//   }
 
-  function isCommonJS() {
-    return typeof module === 'object';
-  }
+//   function isBrowser() {
+//     return typeof window === 'object';
+//   }
 
-  function globalRegister() {
-    if (isNode()) {
-      /* global global */
-      register(global, lazyAss, 'lazyAss', 'la');
-      register(global, lazyAssync, 'lazyAssync', 'lac');
-    }
-  }
+//   function isCommonJS() {
+//     return typeof module === 'object';
+//   }
 
-  function register(root, value, name, alias) {
-    root[name] = root[alias] = value;
-  }
+//   function globalRegister() {
+//     if (isNode()) {
+//       /* global global */
+//       register(global, lazyAss, 'lazyAss', 'la');
+//       register(global, lazyAssync, 'lazyAssync', 'lac');
+//     }
+//   }
 
-  lazyAss.globalRegister = globalRegister;
+//   function register(root, value, name, alias) {
+//     root[name] = root[alias] = value;
+//   }
 
-  if (isBrowser()) {
-    /* global window */
-    register(window, lazyAss, 'lazyAss', 'la');
-    register(window, lazyAssync, 'lazyAssync', 'lac');
-  }
+//   lazyAss.globalRegister = globalRegister;
 
-  if (isCommonJS()) {
-    /* global module */
-    module.exports = lazyAss;
-  }
+//   if (isBrowser()) {
+//     /* global window */
+//     register(window, lazyAss, 'lazyAss', 'la');
+//     register(window, lazyAssync, 'lazyAssync', 'lac');
+//   }
 
-}());
+//   if (isCommonJS()) {
+//     /* global module */
+//     module.exports = lazyAss;
+//   }
+
+// }());
