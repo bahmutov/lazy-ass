@@ -123,7 +123,12 @@ function lazyAssLogic(condition) {
   }
 }
 
-export const lazyAss = function lazyAss() {
+interface LazyAss {
+  (): void;
+  async: () => void;
+}
+
+export const lazyAss: LazyAss = <LazyAss>function lazyAss() {
   var err = lazyAssLogic.apply(null, arguments);
   if (err) {
     throw err;
@@ -139,7 +144,6 @@ export const lazyAssync = function lazyAssync() {
   }
 };
 
-// TODO how to add a property to a function?
-// lazyAss.async = lazyAssync;
+lazyAss.async = lazyAssync;
 
 export default lazyAss;
