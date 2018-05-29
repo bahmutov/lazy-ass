@@ -1,4 +1,4 @@
-const la = require('..')
+const {lazyAss: la} = require('..')
 
 describe('commonjs interface', function () {
   it('can be loaded', function () {

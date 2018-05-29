@@ -1,3 +1,5 @@
+// TODO update this demo too, probably use Jest
+
 /* global lazyAssync, lac */
 (function (root) {
   if (typeof window === 'undefined') {

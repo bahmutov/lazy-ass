@@ -128,7 +128,6 @@
   // lazyAss.async = lazyAssync;
 
   export default lazyAss
-
 //   function isNode() {
 //     return typeof global === 'object';
 //   }

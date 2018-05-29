@@ -13,7 +13,6 @@
 [![Coverage Status][lazy-ass-coverage-image]][lazy-ass-coverage-url]
 [![Codacy][lazy-ass-codacy-image]][lazy-ass-codacy-url]
 [![Code Climate][lazy-ass-code-climate-image]][lazy-ass-code-climate-url]
-[![next-update-travis badge][nut-badge]][nut-readme]
 
 [Demo](http://glebbahmutov.com/lazy-ass/)
 
@@ -40,7 +39,11 @@ Lazy assertion function evaluates its arguments and forms
 a message ONLY IF the condition is false
 
 ```js
+const {lazyAss} = require('lazy-ass')
 lazyAss(typeof foo === 'object', 'expected', foo, 'to be an object');
+// shorter version
+const {lazyAss: la} = require('lazy-ass')
+la(typeof foo === 'object', 'expected', foo, 'to be an object');
 ```
 
 Concatenates strings, stringifies objects, calls functions - only if

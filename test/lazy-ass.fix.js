@@ -1,3 +1,5 @@
+// TODO update this demo, probably use Jest
+
 /* global lazyAss, la */
 (function (root) {
   var expect = root.expect;

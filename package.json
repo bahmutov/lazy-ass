@@ -56,9 +56,9 @@
     "node"
   ],
   "license": "MIT",
-  "main": "dist",
-  "module": "src",
-  "types": "src",
+  "main": "./dist",
+  "module": "./src",
+  "types": "./src",
   "release": {
     "analyzeCommits": {
       "preset": "angular",
