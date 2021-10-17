@@ -91,7 +91,7 @@
     "pkgfiles": "pkgfiles",
     "pretest": "npm run build",
     "semantic-release": "semantic-release",
-    "size": "tarball=\"$(npm pack .)\"; wc -c \"${tarball}\"; tar tvf \"${tarball}\"; rm \"${tarball}\";",
+    "size": "npm pack --dry",
     "test": "npm run unit && npm run jest",
     "unit": "mocha test/commonjs.spec.js",
     "jest": "jest",

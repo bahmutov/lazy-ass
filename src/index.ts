@@ -45,6 +45,12 @@ function replacer(key, value) {
 }
 
 function toString(arg, k) {
+  if (arg === null) {
+    return 'null'
+  }
+  if (arg === undefined) {
+    return 'undefined'
+  }
   if (isPrimitive(arg)) {
     return JSON.stringify(arg)
   }

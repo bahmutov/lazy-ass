@@ -62,3 +62,17 @@ describe('gives context to non-serializable objects', function() {
     }).toThrowErrorMatchingSnapshot()
   })
 })
+
+describe('null is different from undefined', function() {
+  const foo: any = function foo() {
+    const a = undefined
+    const b = null
+    lazyAss(a === b, a, '!==', b)
+  }
+
+  it('null in the message', function() {
+    expect(function() {
+      foo()
+    }).toThrowError(`undefined !== null`)
+  })
+})
