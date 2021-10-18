@@ -6,8 +6,6 @@
 
 [![Build status][lazy-ass-ci-image] ][lazy-ass-ci-url]
 [![manpm](https://img.shields.io/badge/manpm-compatible-3399ff.svg)](https://github.com/bahmutov/manpm)
-[![dependencies][lazy-ass-dependencies-image] ][lazy-ass-dependencies-url]
-[![devdependencies][lazy-ass-devdependencies-image] ][lazy-ass-devdependencies-url]
 
 [![semantic-release][semantic-image] ][semantic-url]
 [![Coverage Status][lazy-ass-coverage-image]][lazy-ass-coverage-url]
@@ -264,9 +262,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [lazy-ass-code-climate-url]: https://codeclimate.com/github/bahmutov/lazy-ass
 [lazy-ass-codacy-image]: https://www.codacy.com/project/badge/b60a0810c9af4fe4b2ae685932dbbdb8
 [lazy-ass-codacy-url]: https://www.codacy.com/public/bahmutov/lazy-ass.git
-[lazy-ass-dependencies-image]: https://david-dm.org/bahmutov/lazy-ass.svg
-[lazy-ass-dependencies-url]: https://david-dm.org/bahmutov/lazy-ass
-[lazy-ass-devdependencies-image]: https://david-dm.org/bahmutov/lazy-ass/dev-status.svg
-[lazy-ass-devdependencies-url]: https://david-dm.org/bahmutov/lazy-ass#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
