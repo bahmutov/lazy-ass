@@ -1,0 +1,24 @@
+name: ci
+on: [push]
+jobs:
+  tests:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # Install NPM dependencies, cache them correctly
+      # https://github.com/bahmutov/npm-install
+      - uses: bahmutov/npm-install@v1
+
+      - run: npm test
+
+      - name: Semantic Release 🚀
+        uses: cycjimmy/semantic-release-action@v2
+        with:
+          branches: master
+        env:
+          # github token is automatically created by the GH Action workflow
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # created using semantic-release
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
