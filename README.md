@@ -216,8 +216,11 @@ import la = require('lazy-ass')
 Author: Gleb Bahmutov &copy; 2014
 
 * [@bahmutov](https://twitter.com/bahmutov)
-* [glebbahmutov.com](http://glebbahmutov.com)
-* [blog](http://glebbahmutov.com/blog)
+* [glebbahmutov.com](https://glebbahmutov.com)
+* [blog](https://glebbahmutov.com/blog)
+* [videos](https://www.youtube.com/glebbahmutov)
+* [presentations](https://slides.com/bahmutov)
+* [cypress.tips](https://cypress.tips)
 
 License: MIT - do anything with the code, but don't blame me if it does not work.
 
@@ -253,8 +256,8 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 [lazy-ass-icon]: https://nodei.co/npm/lazy-ass.svg?downloads=true
 [lazy-ass-url]: https://npmjs.org/package/lazy-ass
-[lazy-ass-ci-image]: https://travis-ci.org/bahmutov/lazy-ass.svg?branch=master
-[lazy-ass-ci-url]: https://travis-ci.org/bahmutov/lazy-ass
+[lazy-ass-ci-image]: https://github.com/bahmutov/lazy-ass/actions/workflows/ci.yml/badge.svg?branch=master&event=push
+[lazy-ass-ci-url]: https://github.com/bahmutov/lazy-ass/actions/workflows/ci.yml
 [lazy-ass-coverage-image]: https://coveralls.io/repos/bahmutov/lazy-ass/badge.svg
 [lazy-ass-coverage-url]: https://coveralls.io/r/bahmutov/lazy-ass
 [lazy-ass-code-climate-image]: https://codeclimate.com/github/bahmutov/lazy-ass/badges/gpa.svg
@@ -267,5 +270,3 @@ OTHER DEALINGS IN THE SOFTWARE.
 [lazy-ass-devdependencies-url]: https://david-dm.org/bahmutov/lazy-ass#info=devDependencies
 [semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-url]: https://github.com/semantic-release/semantic-release
-[nut-badge]: https://img.shields.io/badge/next--update--travis-ok-green.svg
-[nut-readme]: https://github.com/bahmutov/next-update-travis#readme
