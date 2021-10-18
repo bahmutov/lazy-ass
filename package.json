@@ -13,17 +13,6 @@
         "grunt-cli",
         "karma"
       ]
-    },
-    "pre-git": {
-      "commit-msg": "simple",
-      "pre-commit": [
-        "npm test"
-      ],
-      "pre-push": [
-        "npm run size"
-      ],
-      "post-commit": [],
-      "post-merge": []
     }
   },
   "contributors": [],
@@ -35,10 +24,8 @@
     "jest": "27.3.0",
     "mocha": "3.5.3",
     "pkgfiles": "2.3.2",
-    "pre-git": "3.17.1",
     "prettier": "1.13.2",
     "semantic-release": "^15.5.0",
-    "simple-commit-message": "3.3.2",
     "ts-jest": "27.0.7",
     "typescript": "4.4.4"
   },
@@ -63,17 +50,6 @@
   "main": "./dist",
   "module": "./src",
   "types": "./src",
-  "release": {
-    "analyzeCommits": {
-      "preset": "angular",
-      "releaseRules": [
-        {
-          "type": "break",
-          "release": "major"
-        }
-      ]
-    }
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bahmutov/lazy-ass.git"
